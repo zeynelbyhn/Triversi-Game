@@ -1,42 +1,20 @@
-Triversi - C Programming Game
-Triversi is a strategic board game designed for 3 players (Red, Yellow, and Blue) played on a dynamic grid. The objective is to have the most pieces of your color on the board when all cells are filled.
-+4
+# Triversi – C Programming Game
 
-Game Rules
+Triversi is a board game where **3 players (Red, Yellow, Blue)** strategically place stones on a **variable-sized board** using C programming.
 
-Board Size: The user can define the board size, with a maximum limit of 23x23 to ensure stability.
-+1
+## Game Rules
 
-Initial Move: The game starts by placing the first piece in the exact center of the board. The logic automatically calculates the center for both odd and even-sized grids.
-+1
+- **Board Size:** Maximum board size is **23x23**.
+- **Starting Move:** The first stone is placed at the **center of the board**.
+- **Moves:** Each new stone must be placed **adjacent to an existing stone**.
+- **Conversion Rule:** Opponent stones that are **between two stones of the same color** are converted to the current player's color.  
+  Conversion is checked in **8 directions**.
+- **Winning Condition:** When the board is full, the player with the **highest number of stones** wins.
 
+## Installation and Execution
 
-Placement Strategy: Every new piece must be placed adjacent to at least one existing piece on the board.
-+1
+Compile and run the program using the following commands:
 
-
-Piece Transformation: When a piece is placed, the program scans in 8 different directions (horizontal, vertical, and diagonal). Any opponent pieces trapped between the newly placed piece and another piece of the same color are converted to the current player's color.
-+3
-
-
-Winning: Once the board is full, the program counts the Red (K), Yellow (S), and Blue (M) pieces to determine and announce the winner.
-+2
-
-Technical Features
-Written in C using 2D arrays for board management.
-+1
-
-Implemented custom directional scan algorithms using while loops and flags for piece conversion.
-+2
-
-Includes robust input validation for coordinates and board boundaries.
-
-Installation and Usage
-To compile and run the game on your local machine, use a C compiler (like GCC):
-
-Bash
-# Compile the source code
-gcc 23011104.c -o triversi
-
-# Run the game
+```bash
+gcc main.c -o triversi
 ./triversi
